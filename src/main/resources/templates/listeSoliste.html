@@ -10,28 +10,29 @@
 <title>Créer soliste</title>
 </head>
 <body>
-	<form method="post" action="saveSoliste" modelAttribute="soliste">
-	
-		<div class="mb-3">
-			<label for="nom" class="form-label">Nom</label> 
-			<input type="text" name="Nom" class="form-control" id="nom">
-		</div>
-		<div class="mb-3">
-			<label for="marque" class="form-label">prenom</label> 
-			<input type="text" name="Prenom" class="form-control" id="prenom">
-		</div>
-		<div class="mb-3">
-			<label for="immatriculation" class="form-label">Date de naissance</label> 
-			<input type="date" name="dateNaissance" class="form-control" id="immatriculation">
-		</div>
-		<div class="mb-3">
-			<label for="puissance" class="form-label">Nationalite</label> 
-			<input type="text" name="Nationalite" class="form-control" id="puissance">
-		</div>
-		
-		<button type="submit" class="btn btn-outline-success btn-sm">Valider</button>
-		<button type="reset" class="btn btn-outline-secondary btn-sm">Annuler</button>
 
-	</form>
+	  <table class="table">
+	  <thead><tr>
+	  <th scope="col">Id</th>
+	  <th scope="col">Nom</th>
+	  <th scope="col">Prénom</th>
+	  <th scope="col">Date de naissance</th>
+	  <th scope="col">Nationalité</th>
+	  <th scope="col">Actions</th>
+	  </tr></thead>
+	  <tbody>
+	  
+	  <tr th:each="sol: ${ listeS }">
+      <th scope="row" th:text="${ sol.num }"></th>
+      <td th:text="${ sol.nom }"></td>
+      <td th:text="${ sol.prenom }"></td>
+      <td th:text="${ sol.dateNaissance }"></td>
+      <td th:text="${ sol.nationalite }"></td>
+      <td><a th:href="'/soliste/deleteSoliste/' + ${sol.num}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+    </tr>
+    </tbody>
+    </table>
+	  
+    
 </body>
 </html>

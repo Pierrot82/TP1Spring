@@ -27,12 +27,12 @@ public class SolisteController {
 	@PostMapping("saveSoliste")
 	public String saveSoliste(@ModelAttribute("soliste") Soliste s) {
 		isr.save(s);
-		return "redirect:/listeSoliste";
+		return "redirect:/soliste/listeSoliste";
 	}
 
 	@GetMapping("listeSoliste")
 	public String listeSoliste(Model m) {
-		m.addAttribute("listeSoliste", isr.findAll().toArray());
+		m.addAttribute("listeS", isr.findAll().toArray());
 		return "listeSoliste";
 	}
 	@GetMapping("getSoliste")
@@ -44,7 +44,7 @@ public class SolisteController {
 	@GetMapping("deleteSoliste")
 	public String deleteSoliste(@RequestParam("id") int id) {
 		isr.deleteById(id);
-		return "redirect:/listeSoliste";
+		return "redirect:/soliste/listeSoliste";
 	}
 	
 	@GetMapping("modifierSoliste")
