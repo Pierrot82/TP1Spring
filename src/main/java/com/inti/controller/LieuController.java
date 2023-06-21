@@ -21,13 +21,16 @@ public class LieuController {
 	
 	@GetMapping("creerLieu")
 	public String formLieu() {
-		return "formLieu";
+		return "creerLieu";
 	}
 
 	@PostMapping("saveLieu")
 	public String saveLieu(@ModelAttribute("lieu") Lieu l) {
 		ilr.save(l);
-		return "redirect:/listeLieu";
+		//return "redirect:/listeLieu";
+		return "redirect:/creerLieu";
+		
+		
 	}
 
 	@GetMapping("listeLieu")
