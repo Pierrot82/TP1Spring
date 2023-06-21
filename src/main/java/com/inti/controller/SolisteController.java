@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,9 +42,10 @@ public class SolisteController {
 		return "getSoliste";
 	}
 	
-	@GetMapping("deleteSoliste")
-	public String deleteSoliste(@RequestParam("id") int id) {
-		isr.deleteById(id);
+	@GetMapping("deleteSoliste/{num}")
+	public String deleteSoliste(@PathVariable("num") int num) {
+		isr.deleteById(num);
+
 		return "redirect:/soliste/listeSoliste";
 	}
 	
