@@ -34,11 +34,6 @@ public class ConcertController {
 		System.out.println(icr.findAll());
 		return "listeConcert";
 	}
-	@GetMapping("getConcert")
-	public String getConcert(@RequestParam("id") int id, Model m) {
-		m.addAttribute("concert", icr.findById(id).get());
-		return "getConcert";
-	}
 	@GetMapping("deleteConcert")
 	public String deleteConcert(@RequestParam("id") int id) {
 		icr.deleteById(id);

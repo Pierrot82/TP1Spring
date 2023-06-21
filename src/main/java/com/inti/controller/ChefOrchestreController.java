@@ -34,11 +34,6 @@ public class ChefOrchestreController {
 		System.out.println(icor.findAll());
 		return "listeChefOrchestre";
 	}
-	@GetMapping("getChefOrchestre")
-	public String getChefOrchestre(@RequestParam("id") int id, Model m) {
-		m.addAttribute("chefOrchestre", icor.findById(id).get());
-		return "getChefOrchestre";
-	}
 	@GetMapping("deleteChefOrchestre")
 	public String deleteChefOrchestre(@RequestParam("id") int id) {
 		icor.deleteById(id);
