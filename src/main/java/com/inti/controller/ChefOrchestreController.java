@@ -12,6 +12,7 @@ import com.inti.model.ChefOrchestre;
 import com.inti.repository.IChefOrchestreRepository;
 
 @Controller
+@RequestMapping("/chef_orchestre")
 public class ChefOrchestreController {
 	
 	@Autowired
