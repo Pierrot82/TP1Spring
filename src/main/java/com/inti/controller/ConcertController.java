@@ -33,7 +33,6 @@ public class ConcertController {
 	@GetMapping("listeConcert")
 	public String listeConcert(Model m) {
 		m.addAttribute("listeConcert", icr.findAll().toArray());
-		System.out.println(icr.findAll());
 		return "listeConcert";
 	}
 	@GetMapping("deleteConcert")

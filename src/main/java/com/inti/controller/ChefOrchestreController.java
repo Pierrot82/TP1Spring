@@ -33,7 +33,6 @@ public class ChefOrchestreController {
 	@GetMapping("listeChefOrchestre")
 	public String listeChefOrchestre(Model m) {
 		m.addAttribute("listeChefOrchestre", icor.findAll().toArray());
-		System.out.println(icor.findAll());
 		return "listeChefOrchestre";
 	}
 	@GetMapping("deleteChefOrchestre")
