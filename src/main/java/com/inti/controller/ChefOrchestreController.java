@@ -19,7 +19,7 @@ public class ChefOrchestreController {
 	
 	@GetMapping("creerChefOrchestre")
 	public String formChefOrchestre() {
-		return "formChefOrchestre";
+		return "creerChefOrchestre";
 	}
 
 	@PostMapping("saveChefOrchestre")
