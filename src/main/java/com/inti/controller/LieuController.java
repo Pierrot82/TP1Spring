@@ -28,14 +28,16 @@ public class LieuController {
 	public String saveLieu(@ModelAttribute("lieu") Lieu l) {
 		ilr.save(l);
 		//return "redirect:/listeLieu";
-		return "redirect:/creerLieu";
+		return "redirect:/lieu/creerLieu";
 		
 		
 	}
 
 	@GetMapping("listeLieu")
 	public String listeLieu(Model m) {
-		m.addAttribute("listeLieu", ilr.findAll().toArray());
+		
+		m.addAttribute("listeLieu", ilr.findAll());
+		
 		System.out.println(ilr.findAll());
 		return "listeLieu";
 	}

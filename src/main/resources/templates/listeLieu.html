@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>ajouter client</title>
+<title>liste des lieu</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -10,25 +10,6 @@
 	crossorigin="anonymous">
 	
 
-<link href="static/css/style.css" >
-	
-	<script>
-    function remplacerTexte(id) {
-      var tdElement = document.querySelector("#prenom" + id);
-      var prenom = tdElement.innerText;
-
-      var inputElement = document.createElement("input");
-      inputElement.type = "text";
-      
-      inputElement.value = prenom;
-
-      tdElement.innerText = "";
-      tdElement.appendChild(inputElement);
-
-
-      
-    }
-  </script>
 	
 </head>
 
@@ -39,29 +20,24 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Prenom</th>
-      <th scope="col">email</th>
-      <th scope="col">ville</th>
+      <th scope="col">Nom lieu :</th>
+      <th scope="col">rue :</th>
+      <th scope="col">nombre de place : </th>
       <th scope="col">action</th>
     </tr>
   </thead>
   <tbody>   
   
   
-    <tr th:each="a1 : ${ listeA }">
-      <th scope="row" th:text="${ a1.id }"></th>
-      <td th:text="${ a1.nom }"></td>
-      <td th:text="${ a1.prenom }" th:id="'prenom' + ${a1.id}" th:onclick="'remplacerTexte(' + ${ a1.id } + ')'" ></td>
-      
-    
-      
-      <td th:text="${ a1.email }"></td>
-      <td th:text="${ a1.ville }"></td>
+    <tr th:each="l1 : ${ listeLieu }">
+      <th scope="row" th:text="${ l1.codeLieu }"></th>
+      <td th:text="${ l1.nomLieu }"></td>
+      <td th:text="${ l1.rue }" ></td>
+      <td th:text="${ l1.nombreFauteuils }"></td>
       
       
-      <td> <a th:href="'deleteActeur/' + ${ a1.id }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a></td>
-	  <td> <a th:href="'modifActeur/' + ${ a1.id }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
+      <td> <a th:href="'deleteLieu/' + ${ a1.codeLieu }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a></td>
+	  <td> <a th:href="'modifLieu/' + ${ a1.codeLieu }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
 
 
     </tr>
@@ -72,9 +48,9 @@
   </tbody>
 </table>
 
-<p>              il y a <span th:text="${ nb}"></span> acteur (span)</p>
 
-<p th:text="  '   il y a' + ${ nb} +' acteurs (p)' "> </p>
+
+<!-- <p th:text="  '   il y a' + ${ nb} +' acteurs (p)' "> </p> -->
 
 
 </body>

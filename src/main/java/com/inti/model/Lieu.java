@@ -10,16 +10,18 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Table
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter @Setter
 public class Lieu {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,4 +40,13 @@ public class Lieu {
 		this.rue = rue;
 		this.nombreFauteuils = nombreFauteuils;
 	}
+
+	@Override
+	public String toString() {
+		return "Lieu [codeLieu=" + codeLieu + ", nomLieu=" + nomLieu + ", rue=" + rue + ", nombreFauteuils="
+				+ nombreFauteuils + "]";
+	}
+	
+	
+	
 }
