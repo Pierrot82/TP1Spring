@@ -6,12 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.inti.model.Soliste;
 import com.inti.repository.ISolisteRepository;
 
 @Controller
+@RequestMapping("/soliste")
 public class SolisteController {
 	
 	@Autowired
@@ -19,7 +21,7 @@ public class SolisteController {
 	
 	@GetMapping("creerSoliste")
 	public String formSoliste() {
-		return "formSoliste";
+		return "creerSoliste";
 	}
 
 	@PostMapping("saveSoliste")

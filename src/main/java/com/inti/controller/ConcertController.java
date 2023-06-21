@@ -21,7 +21,7 @@ public class ConcertController {
 	
 	@GetMapping("creerConcert")
 	public String formConcert() {
-		return "formConcert";
+		return "creerConcert";
 	}
 
 	@PostMapping("saveConcert")
