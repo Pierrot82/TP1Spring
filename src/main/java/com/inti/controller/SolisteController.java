@@ -30,6 +30,17 @@ public class SolisteController {
 		return "redirect:/listeSoliste";
 	}
 
+	@GetMapping("listeSoliste")
+	public String listeSoliste(Model m) {
+		m.addAttribute("listeSoliste", isr.findAll().toArray());
+		return "listeSoliste";
+	}
+	@GetMapping("getSoliste")
+	public String getSoliste(@RequestParam("id") int id, Model m) {
+		m.addAttribute("soliste", isr.findById(id).get());
+		return "getSoliste";
+	}
+	
 	@GetMapping("deleteSoliste")
 	public String deleteSoliste(@RequestParam("id") int id) {
 		isr.deleteById(id);
@@ -50,11 +61,5 @@ public class SolisteController {
 		return "redirect:/listeSoliste";
 	}
 	
-	@GetMapping("listeSoliste")
-	public String listeSoliste(Model m) {
-		m.addAttribute("listeS", isr.findAll());
-		//System.out.println(isr.findAll());
-		return "listeSoliste";
-	}
 
 }
