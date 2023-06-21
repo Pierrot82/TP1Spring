@@ -28,7 +28,8 @@
       <td th:text="${ sol.prenom }"></td>
       <td th:text="${ sol.dateNaissance }"></td>
       <td th:text="${ sol.nationalite }"></td>
-      <td><a th:href="'/soliste/deleteSoliste/' + ${sol.num}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+      <td><a th:href="'/soliste/deleteSoliste/' + ${sol.num}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+      <a th:href="'/soliste/modifierSoliste/' + ${sol.num}"> <button type="button" class="btn btn-outline-info">Modifier</button></a></td>
     </tr>
     </tbody>
     </table>
