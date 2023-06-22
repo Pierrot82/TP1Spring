@@ -7,5 +7,8 @@ import com.inti.model.Utilisateur;
 
 @Repository
 public interface IUtilisateurRepository extends JpaRepository<Utilisateur, Integer> {
+	
+	
+	Utilisateur findByLoginAndMdp(String login, String mdp);
 
 }

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.inti.model.Soliste;
 import com.inti.model.Utilisateur;
 import com.inti.repository.IUtilisateurRepository;
 
@@ -28,4 +27,22 @@ public class UtilisateurController {
 		return "redirect:creerUtilisateur";
 	}
 
+	@GetMapping("connexionUtilisateur")
+	public String connexionUtilisateur() {
+		return "connexionUtilisateur";
+	}
+	
+	@PostMapping("connexionUtilisateur")
+	public String recupererUtilisateur(@ModelAttribute ("utilisateur") Utilisateur u, Model m) {
+		Utilisateur u1 = iur.findByLoginAndMdp(u.getLogin(), u.getMdp());
+		m.addAttribute("utilisateur", u1);
+		if(u1 == null)
+		{
+			m.addAttribute("erreur", true);
+			return "connexionUtilisateur";
+		}
+		return "redirect:/";
+	}
+	
+	
 }
