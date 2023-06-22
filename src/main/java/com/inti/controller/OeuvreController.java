@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.inti.model.Oeuvre;
 import com.inti.repository.IOeuvreRepository;
 
+import lombok.NonNull;
+
 @Controller
 @RequestMapping("oeuvre")
 public class OeuvreController {
@@ -57,5 +59,16 @@ public class OeuvreController {
 		ior.save(o); // = saveOrUpdate
 		return "redirect:/oeuvre/listeOeuvre";
 	}
+	
+
+	
+	@GetMapping("getOeuvre/{idOeuvre}")
+	public String getConcert(@PathVariable("idOeuvre") int idOeuvre, Model m)
+	{
+		m.addAttribute("o1", ior.findById(idOeuvre).get());
+		
+		return "getOeuvre";
+	}
+	
 
 }
