@@ -37,8 +37,8 @@
       <td th:text="${ lieu1.nomLieu }"></td>
       <td th:text="${ lieu1.rue }" ></td>
       <td th:text="${ lieu1.nombreFauteuils }"></td>
-      <td> <a th:href="'deleteLieu/' + ${ lieu1.codeLieu }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a></td>
-	  <td> <a th:href="'modifLieu/' + ${ lieu1.codeLieu }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
+      <td> <a th:href="'deleteLieu/' + ${ lieu1.codeLieu }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a><a th:href="'modifLieu/' + ${ lieu1.codeLieu }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
+	  
 
     </tr>
 
@@ -46,7 +46,7 @@
 </table>
 
 
-
+	<h2> Liste des concert du lieu : </h2>
 
 	<div>
 	
@@ -60,7 +60,6 @@
       <th scope="col">Id :</th>
       <th scope="col">nom concert : </th>
       <th scope="col">date : </th>
-      <th scope="col">action</th>
     </tr>
   </thead>
   <tbody>   
@@ -71,10 +70,6 @@
       <th scope="row"><a th:href="rego" th:text="${ c1.numeroConcert }"></a></th>
       <td th:text="${ c1.nomConcert }"></td>
       <td th:text="${ c1.dateConcert }" ></td>
-      <td> <a th:href="'deleteLieu/' + ${ lieu1.codeLieu }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a></td>
-	  <td> <a th:href="'modifLieu/' + ${ lieu1.codeLieu }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
-    
-
     </tr>
 
   </tbody>
