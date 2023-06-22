@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Modifier Soliste</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+<div th:include="menu.html"></div>
+	<form method="post" action="updateChefOrchestre" modelAttribute="chefOrchestre">
+		
+		<div class="mb-3"> 			
+			<input type="hidden" name="id" class="form-control" id="id" th:value="${chefOrchestre.id}">
+		</div>
+	
+		<div class="mb-3">
+			<label for="nom" class="form-label">Nom</label> 
+			<input type="text" name="nom" class="form-control" id="nom" th:value="${chefOrchestre.nom}">
+		</div>
+		<div class="mb-3">
+			<label for="prenom" class="form-label">Prénom</label> 
+			<input type="text" name="prenom" class="form-control" id="prenom" th:value="${chefOrchestre.prenom}">
+		</div>
+		<div class="mb-3">
+			<label for="dateNaissance" class="form-label">Date de naissance</label> 
+			<input type="text" name="dateNaissance" class="form-control" id="dateNaissance" th:value="${chefOrchestre.dateNaissance}">
+		</div>
+		<div class="mb-3">
+			<label for="nationalite" class="form-label">Nationalité</label> 
+			<input type="text" name="nationalite" class="form-control" id="nationalite" th:value="${chefOrchestre.nationalite}">
+		</div>
+		<div class="mb-3">
+			<label for="prix" class="form-label">Prix</label> 
+			<input type="text" name="prix" class="form-control" id="prix" th:value="${chefOrchestre.prix}">
+		</div>
+		<div class="mb-3">
+			<label for="commentaires" class="form-label">Commentaires</label> 
+			<input type="text" name="commentaires" class="form-control" id="commentaires" th:value="${chefOrchestre.commentaires}">
+		</div>
+		
+		<button type="submit" class="btn btn-outline-success btn-sm">Valider</button>
+		<button type="reset" class="btn btn-outline-secondary btn-sm">Annuler</button>
+
+	</form>
+</body>
+</html>
