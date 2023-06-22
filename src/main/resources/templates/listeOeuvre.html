@@ -16,6 +16,7 @@
       <th scope="col">id</th>
       <th scope="col">Nom</th>
       <th scope="col">Duree (minutes)</th>
+      <th scope="col">Actions</th>
 
     </tr>
   </thead>
@@ -24,6 +25,8 @@
       <th scope="row" th:text = "${oeuvre.idOeuvre}"></th>
       <td th:text = "${oeuvre.nomOeuvre}"></td>
       <td th:text = "${oeuvre.dureeOeuvre}"></td>
+      <td><a th:href="'/oeuvre/deleteOeuvre/' + ${oeuvre.idOeuvre}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+      <a th:href="'/oeuvre/modifierOeuvre/' + ${oeuvre.idOeuvre}"> <button type="button" class="btn btn-outline-info">Modifier</button></a></td>      
     </tr>
   </tbody>
 </table>
