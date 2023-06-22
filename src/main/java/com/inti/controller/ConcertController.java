@@ -5,11 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.inti.model.Concert;
+import com.inti.model.Soliste;
 import com.inti.repository.IConcertRepository;
 
 @Controller
@@ -27,7 +29,7 @@ public class ConcertController {
 	@PostMapping("saveConcert")
 	public String saveConcert(@ModelAttribute("concert") Concert s) {
 		icr.save(s);
-		return "redirect:/listeConcert";
+		return "redirect:/concert/listeConcert";
 	}
 
 	@GetMapping("listeConcert")
@@ -35,24 +37,26 @@ public class ConcertController {
 		m.addAttribute("listeConcert", icr.findAll().toArray());
 		return "listeConcert";
 	}
-	@GetMapping("deleteConcert")
-	public String deleteConcert(@RequestParam("id") int id) {
-		icr.deleteById(id);
-		return "redirect:/listeConcert";
+	@GetMapping("deleteConcert/{numeroConcert}")
+	public String deleteConcert(@PathVariable("numeroConcert") int numeroConcert) {
+		icr.deleteById(numeroConcert);
+		return "redirect:/concert/listeConcert";
 	}
 	
-	@GetMapping("modifierConcert")
-	public String modifierConcert(@RequestParam("id") int id, Model m)
+
+	@GetMapping("modifierConcert/{numeroConcert}")
+	public String modifierConcert(@PathVariable("numeroConcert") int numeroConcert, Model m)
 	{
-		m.addAttribute("concert", icr.findById(id).get());
+		m.addAttribute("concert", icr.findById(numeroConcert).get());
 		return "modifierConcert";
 	}
 	
-	@PostMapping("updateConcert")
+	@PostMapping("modifierConcert/updateConcert")
 	public String updateConcert(@ModelAttribute("concert") Concert s)
 	{
 		icr.save(s);
-		return "redirect:/listeConcert";
+		return "redirect:/concert/listeConcert";
 	}
+	
 
 }

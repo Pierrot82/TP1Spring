@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,14 +38,14 @@ public class OeuvreController {
 	}
 
 	
-	@GetMapping("deleteOeuvre")
-	public String deleteOeuvre(@RequestParam("id") int id) {
+	@GetMapping("deleteOeuvre/{id}")
+	public String deleteOeuvre(@PathVariable("id") int id) {
 		ior.deleteById(id);
-		return "redirect:/listeOeuvre";
+		return "redirect:/oeuvre/listeOeuvre";
 	}
 	
-	@GetMapping("modifierOeuvre")
-	public String modifierOeuvre(@RequestParam("id") int id, Model m)
+	@GetMapping("modifierOeuvre/{id}")
+	public String modifierOeuvre(@PathVariable("id") int id, Model m)
 	{
 		m.addAttribute("oeuvre", ior.findById(id).get());
 		return "modifierOeuvre";
@@ -54,7 +55,7 @@ public class OeuvreController {
 	public String updateOeuvre(@ModelAttribute("oeuvre") Oeuvre o)
 	{
 		ior.save(o); // = saveOrUpdate
-		return "redirect:/listeOeuvre";
+		return "redirect:/oeuvre/listeOeuvre";
 	}
 
 }
