@@ -15,27 +15,23 @@
 </head>
 <body>
 <div th:include="menu.html"></div>
-	<form method="post" action="updateSoliste" modelAttribute="sol">
+	<form method="post" action="updateLieu" modelAttribute="lieu">
 		
 		<div class="mb-3"> 			
-			<input type="hidden" name="num" class="form-control" id="num" th:value="${soliste.num}">
+			<input type="hidden" name="codeLieu" class="form-control" id="codeLieu" th:value="${lieu.codeLieu}">
 		</div>
 	
 		<div class="mb-3">
-			<label for="nom" class="form-label">Nom</label> 
-			<input type="text" name="nom" class="form-control" id="nom" th:value="${soliste.nom}">
+			<label for="nomLieu" class="form-label">Nom</label> 
+			<input type="text" name="nomLieu" class="form-control" id="nomLieu" th:value="${lieu.nomLieu}">
 		</div>
 		<div class="mb-3">
-			<label for="prenom" class="form-label">Prenom</label> 
-			<input type="text" name="prenom" class="form-control" id="prenom" th:value="${soliste.prenom}">
+			<label for="rue" class="form-label">Rue</label> 
+			<input type="text" name="rue" class="form-control" id="rue" th:value="${lieu.rue}">
 		</div>
 		<div class="mb-3">
-			<label for="dateNaissance" class="form-label">Date de naissance</label> 
-			<input type="text" name="dateNaissance" class="form-control" id="dateNaissance" th:value="${soliste.dateNaissance}">
-		</div>
-		<div class="mb-3">
-			<label for="nationalite" class="form-label">Nationalité</label> 
-			<input type="text" name="nationalite" class="form-control" id="nationalite" th:value="${soliste.nationalite}">
+			<label for="nombreFauteuils" class="form-label">Nombre de Fauteuils</label> 
+			<input type="text" name="nombreFauteuils" class="form-control" id="nombreFauteuils" th:value="${lieu.nombreFauteuils}">
 		</div>
 		
 		<button type="submit" class="btn btn-outline-success btn-sm">Valider</button>

@@ -27,7 +27,6 @@ public class OeuvreController {
 
 	@PostMapping("creerOeuvre")
 	public String saveOeuvre(@ModelAttribute("oeuvre") Oeuvre o) {
-		System.out.println(o);
 		ior.save(o);
 		return "redirect:/oeuvre/listeOeuvre";
 	}

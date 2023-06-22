@@ -9,21 +9,21 @@
 <body>
   <div th:include="menu.html"></div>
   <div style="margin-left: 10%; margin-right: 10%; margin-top: 10%">
-	  <form method="post" action="saveSoliste" modelAttribute="concert">
-	  
-	    <div class="mb-3">
-	      <label for="nomConcert" class="form-label">Nom</label> 
-	      <input type="text" name="nomConcert" class="form-control" id="nomConcert">
-	    </div>
-	    <div class="mb-3">
-	      <label for="dateConcert" class="form-label">Date</label> 
-	      <input type="date" name="dateConcert" class="form-control" id="dateConcert">
-	    </div>
-	    
-	    <button type="submit" class="btn btn-outline-success btn-sm">Valider</button>
-	    <button type="reset" class="btn btn-outline-secondary btn-sm">Annuler</button>
-	
-	  </form>
-	</div>
+    <form method="post" action="saveConcert" modelAttribute="concert">
+    
+      <div class="mb-3">
+        <label for="nomConcert" class="form-label">Nom</label> 
+        <input type="text" name="nomConcert" class="form-control" id="nomConcert">
+      </div>
+      <div class="mb-3">
+        <label for="dateConcert" class="form-label">Date</label> 
+        <input type="date" name="dateConcert" class="form-control" id="dateConcert">
+      </div>
+      
+      <button type="submit" class="btn btn-outline-success btn-sm">Valider</button>
+      <button type="reset" class="btn btn-outline-secondary btn-sm">Annuler</button>
+  
+    </form>
+  </div>
 </body>
 </html>

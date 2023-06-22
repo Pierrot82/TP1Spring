@@ -13,18 +13,16 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 @Table
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Data
 public class Concert {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,11 +42,5 @@ public class Concert {
 		super();
 		this.nomConcert = nomConcert;
 		this.dateConcert = dateConcert;
-	}
-
-	@Override
-	public String toString() {
-		return "Concert [numeroConcert=" + numeroConcert + ", nomConcert=" + nomConcert + ", dateConcert=" + dateConcert
-				+ ", lieu=" + lieu + "]";
 	}
 }

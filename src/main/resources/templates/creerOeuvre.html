@@ -7,7 +7,6 @@
 <title>Créer chef orchestre</title>
 </head>
 <body>
-<table>
   <div th:include="menu.html"></div>
   <div style="margin-left: 10%; margin-right: 10%; margin-top: 10%">
 	  <form method="post" modelAttribute="oeuvre">
@@ -20,6 +19,8 @@
 	      <label for="dureeOeuvre" class="form-label">Durée</label> 
 	      <input type="text" name="dureeOeuvre" class="form-control" id="dureeOeuvre">
 	    </div>
+	    <button type="submit" class="btn btn-outline-success btn-sm">Valider</button>
+	    <button type="reset" class="btn btn-outline-secondary btn-sm">Annuler</button>
 	  </form>
 	</div>
 </body>

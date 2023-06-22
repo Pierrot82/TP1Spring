@@ -9,17 +9,17 @@
 <body>
   <div th:include="menu.html"></div>
   <div style="margin-left: 10%; margin-right: 10%; margin-top: 10%">
-	  <form method="post" action="saveSoliste" modelAttribute="chefOrchestre">
-	  
-	    <div class="mb-3">
-	      <label for="nom" class="form-label">Nom</label> 
-	      <input type="text" name="nom" class="form-control" id="nom">
-	    </div>
-	    <div class="mb-3">
-	      <label for="prenom" class="form-label">Prénom</label> 
-	      <input type="text" name="prenom" class="form-control" id="prenom">
-	    </div>
-	    <div class="mb-3">
+    <form method="post" action="saveSoliste" modelAttribute="chefOrchestre">
+    
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label> 
+        <input type="text" name="nom" class="form-control" id="nom">
+      </div>
+      <div class="mb-3">
+        <label for="prenom" class="form-label">Prénom</label> 
+        <input type="text" name="prenom" class="form-control" id="prenom">
+      </div>
+      <div class="mb-3">
         <label for="dateNaissance" class="form-label">Date de naissance</label> 
         <input type="date" name="dateNaissance" class="form-control" id="dateNaissance">
       </div>
@@ -31,14 +31,14 @@
         <label for="prix" class="form-label">Prix</label> 
         <input type="text" name="prix" class="form-control" id="prix">
       </div>
-      <div class="mb-3">
+         <div class="mb-3">
         <label for="commentaires" class="form-label">Commentaires</label> 
         <input type="text" name="commentaires" class="form-control" id="commentaires">
       </div>
-	    <button type="submit" class="btn btn-outline-success btn-sm">Valider</button>
-	    <button type="reset" class="btn btn-outline-secondary btn-sm">Annuler</button>
-	
-	  </form>
-	</div>
+      <button type="submit" class="btn btn-outline-success btn-sm">Valider</button>
+      <button type="reset" class="btn btn-outline-secondary btn-sm">Annuler</button>
+  
+    </form>
+  </div>
 </body>
 </html>
