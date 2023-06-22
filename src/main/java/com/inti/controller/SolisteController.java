@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -34,29 +35,20 @@ public class SolisteController {
 		System.out.println(isr.findAll());
 		return "listeSoliste";
 	}
-	@GetMapping("getSoliste")
-	public String getSoliste(@RequestParam("id") int id, Model m) {
-		m.addAttribute("soliste", isr.findById(id).get());
-		return "getSoliste";
-	}
-	@GetMapping("deleteSoliste")
-	public String deleteSoliste(@RequestParam("id") int id) {
-		isr.deleteById(id);
-		return "redirect:/listeSoliste";
-	}
+
 	
-	@GetMapping("modifierSoliste")
-	public String modifierSoliste(@RequestParam("id") int id, Model m)
-	{
-		m.addAttribute("soliste", isr.findById(id).get());
+	@GetMapping("modifierSoliste/{num}")
+	public String modifSoliste(@PathVariable("num") int num, Model m) {
+		m.addAttribute("soliste", isr.getReferenceById(num));
+
 		return "modifierSoliste";
 	}
 	
-	@PostMapping("updateSoliste")
+	@PostMapping("modifierSoliste/updateSoliste")
 	public String updateSoliste(@ModelAttribute("soliste") Soliste s)
 	{
 		isr.save(s);
-		return "redirect:/listeSoliste";
+		return "redirect:/soliste/listeSoliste";
 	}
 
 }
