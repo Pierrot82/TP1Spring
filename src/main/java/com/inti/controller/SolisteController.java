@@ -20,7 +20,7 @@ public class SolisteController {
 	
 	@GetMapping("creerSoliste")
 	public String formSoliste() {
-		return "formSoliste";
+		return "creerSoliste";
 	}
 
 	@PostMapping("saveSoliste")
@@ -32,7 +32,6 @@ public class SolisteController {
 	@GetMapping("listeSoliste")
 	public String listeSoliste(Model m) {
 		m.addAttribute("listeSoliste", isr.findAll().toArray());
-		System.out.println(isr.findAll());
 		return "listeSoliste";
 	}
 

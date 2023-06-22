@@ -6,12 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.inti.model.ChefOrchestre;
 import com.inti.repository.IChefOrchestreRepository;
 
 @Controller
+@RequestMapping("chef_orchestre")
 public class ChefOrchestreController {
 	
 	@Autowired
@@ -31,7 +33,6 @@ public class ChefOrchestreController {
 	@GetMapping("listeChefOrchestre")
 	public String listeChefOrchestre(Model m) {
 		m.addAttribute("listeChefOrchestre", icor.findAll().toArray());
-		System.out.println(icor.findAll());
 		return "listeChefOrchestre";
 	}
 	@GetMapping("deleteChefOrchestre")
