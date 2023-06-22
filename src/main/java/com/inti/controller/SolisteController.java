@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.inti.model.Soliste;
 import com.inti.repository.ISolisteRepository;
 
 @Controller
+@RequestMapping("/soliste")
 public class SolisteController {
 	
 	@Autowired
@@ -20,22 +22,27 @@ public class SolisteController {
 	
 	@GetMapping("creerSoliste")
 	public String formSoliste() {
-		return "formSoliste";
+		return "creerSoliste";
 	}
 
 	@PostMapping("saveSoliste")
 	public String saveSoliste(@ModelAttribute("soliste") Soliste s) {
 		isr.save(s);
-		return "redirect:/listeSoliste";
+		return "redirect:/soliste/listeSoliste";
 	}
 
 	@GetMapping("listeSoliste")
 	public String listeSoliste(Model m) {
-		m.addAttribute("listeSoliste", isr.findAll().toArray());
-		System.out.println(isr.findAll());
+		m.addAttribute("listeS", isr.findAll().toArray());
 		return "listeSoliste";
 	}
+	
+	@GetMapping("deleteSoliste/{num}")
+	public String deleteSoliste(@PathVariable("num") int num) {
+		isr.deleteById(num);
 
+		return "redirect:/soliste/listeSoliste";
+	}
 	
 	@GetMapping("modifierSoliste/{num}")
 	public String modifSoliste(@PathVariable("num") int num, Model m) {
@@ -50,5 +57,6 @@ public class SolisteController {
 		isr.save(s);
 		return "redirect:/soliste/listeSoliste";
 	}
+	
 
 }
