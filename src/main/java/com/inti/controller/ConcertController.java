@@ -58,5 +58,14 @@ public class ConcertController {
 		return "redirect:/concert/listeConcert";
 	}
 	
+	
+	@GetMapping("getConcert/{numeroConcert}")
+	public String getConcert(@PathVariable("numeroConcert") int numeroConcert, Model m)
+	{
+		m.addAttribute("c1", icr.findById(numeroConcert).get());
+		
+		return "getConcert";
+	}
+	
 
 }

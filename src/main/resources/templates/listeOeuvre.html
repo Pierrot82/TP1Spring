@@ -20,7 +20,7 @@
   </thead>
   <tbody>
     <tr th:each = "oeuvre: ${ listeOeuvre }">
-      <th scope="row" th:text = "${oeuvre.idOeuvre}"></th>
+      <th scope="row"><a th:href="'getOeuvre/' + ${ oeuvre.idOeuvre}" th:text = "${oeuvre.idOeuvre}"></a></th>
       <td th:text = "${oeuvre.nomOeuvre}"></td>
       <td th:text = "${oeuvre.dureeOeuvre}"></td>
       <td><a th:href="'/oeuvre/deleteOeuvre/' + ${oeuvre.idOeuvre}"><button type="button" class="btn btn-danger">Supprimer</button></a>
