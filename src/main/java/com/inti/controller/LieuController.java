@@ -29,7 +29,7 @@ public class LieuController {
 	public String saveLieu(@ModelAttribute("lieu") Lieu l) {
 		ilr.save(l);
 		//return "redirect:/listeLieu";
-		return "redirect:/lieu/creerLieu";
+		return "redirect:/lieu/listeLieu";
 		
 		
 	}
@@ -54,25 +54,25 @@ public class LieuController {
 
 
 	
-	@GetMapping("deleteLieu/{id}")
-	public String deleteLieu(@PathVariable("id") int id) {
+	@GetMapping("deleteLieu/{codeLieu}")
+	public String deleteLieu(@PathVariable("codeLieu") int codeLieu) {
 
-		ilr.deleteById(id);
+		ilr.deleteById(codeLieu);
 		return "redirect:/lieu/listeLieu";
 	}
 	
-	@GetMapping("modifierLieu")
-	public String modifierLieu(@RequestParam("id") int id, Model m)
+	@GetMapping("modifierLieu/{codeLieu}")
+	public String modifierLieu(@PathVariable("codeLieu") int codeLieu, Model m)
 	{
-		m.addAttribute("lieu", ilr.findById(id).get());
+		m.addAttribute("lieu", ilr.findById(codeLieu).get());
 		return "modifierLieu";
 	}
 	
-	@PostMapping("updateLieu")
+	@PostMapping("modifierLieu/updateLieu")
 	public String updateLieu(@ModelAttribute("lieu") Lieu l)
 	{
 		ilr.save(l);
-		return "redirect:/listeLieu";
+		return "redirect:/lieu/listeLieu";
 	}
 
 }
