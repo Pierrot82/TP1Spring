@@ -10,17 +10,19 @@
 <title>Créer Lieu</title>
 </head>
 <body>
+  <div th:include="menu.html"></div>
+  <div style="margin-left: 10%; margin-right: 10%; margin-top: 10%">
 	<form method="post" action="saveLieu" modelAttribute="lieu">
 		<div class="mb-3">
-			<label for="nom" class="form-label">nom du lieu :</label> 
+			<label for="nom" class="form-label">Nom du lieu :</label> 
 			<input type="text" name="nom" class="form-control" id="nom">
 		</div>
 		<div class="mb-3">
-			<label for="rue" class="form-label">rue : </label> 
+			<label for="rue" class="form-label">Rue : </label> 
 			<input type="text" name="rue" class="form-control" id="rue">
 		</div>
 		<div class="mb-3">
-			<label for="nombreFauteuils" class="form-label">nombre de fauteuils : </label> 
+			<label for="nombreFauteuils" class="form-label">Nombre de fauteuils : </label> 
 			<input type="number" name="nombreFauteuils" class="form-control" id="nombreFauteuils">
 		</div>
 
