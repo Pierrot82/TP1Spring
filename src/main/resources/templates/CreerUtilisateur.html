@@ -15,13 +15,13 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Inscription</h3>
-            <form>
+            <form method="post" action="saveUtilisateur" modelAttribute="utilisateur">
 
               <div class="row">
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="text" id="login" class="form-control form-control-lg" />
+                    <input type="text" id="login" class="form-control form-control-lg" name="login" />
                     <label class="form-label" for="login">Login</label>
                   </div>
 
@@ -29,7 +29,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="password" id="mdp" class="form-control form-control-lg" />
+                    <input type="password" id="mdp" class="form-control form-control-lg" name="mdp"/>
                     <label class="form-label" for="mdp">Mot de passe</label>
                   </div>
 
@@ -40,7 +40,7 @@
                 <div class="col-md-6 mb-4 d-flex align-items-center">
 
                   <div class="form-outline datepicker w-100">
-                    <input type="text" class="form-control form-control-lg" id="nom" />
+                    <input type="text" class="form-control form-control-lg" id="nom" name="nom"/>
                     <label for="nom" class="form-label">Nom</label>
                   </div>
                   </div>
@@ -50,7 +50,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
-                    <input type="text" id="prenom" class="form-control form-control-lg" />
+                    <input type="text" id="prenom" class="form-control form-control-lg" name="prenom"/>
                     <label class="form-label" for="prenom">Prénom</label>
                   </div>
 
@@ -58,7 +58,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
-                    <input type="email" id="email" class="form-control form-control-lg" />
+                    <input type="email" id="email" class="form-control form-control-lg" name="email"/>
                     <label class="form-label" for="email">Email</label>
                   </div>
 
