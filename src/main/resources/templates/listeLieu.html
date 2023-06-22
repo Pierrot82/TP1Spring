@@ -37,10 +37,8 @@
       <td th:text="${ l1.nomLieu }"></td>
       <td th:text="${ l1.rue }" ></td>
       <td th:text="${ l1.nombreFauteuils }"></td>
-      <td> <a th:href="'deleteLieu/' + ${ l1.codeLieu }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a></td>
-	  <td> <a th:href="'modifierLieu/' + ${ l1.codeLieu }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
-    
 
+      <td> <a th:href="'deleteLieu/' + ${ l1.codeLieu }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a><a th:href="'modifierLieu/' + ${ l1.codeLieu }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
     </tr>
 
 
@@ -48,11 +46,6 @@
 
   </tbody>
 </table>
-
-
-
-<!-- <p th:text="  '   il y a' + ${ nb} +' acteurs (p)' "> </p> -->
-
 
 </body>
 </html>
