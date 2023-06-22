@@ -6,12 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.inti.model.Concert;
 import com.inti.repository.IConcertRepository;
 
 @Controller
+@RequestMapping("concert")
 public class ConcertController {
 	
 	@Autowired
@@ -19,7 +21,7 @@ public class ConcertController {
 	
 	@GetMapping("creerConcert")
 	public String formConcert() {
-		return "formConcert";
+		return "creerConcert";
 	}
 
 	@PostMapping("saveConcert")
@@ -31,7 +33,6 @@ public class ConcertController {
 	@GetMapping("listeConcert")
 	public String listeConcert(Model m) {
 		m.addAttribute("listeConcert", icr.findAll().toArray());
-		System.out.println(icr.findAll());
 		return "listeConcert";
 	}
 	@GetMapping("deleteConcert")
