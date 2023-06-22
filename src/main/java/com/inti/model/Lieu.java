@@ -15,13 +15,14 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Table
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Getter @Setter @ToString
 public class Lieu {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,12 +42,6 @@ public class Lieu {
 		this.nombreFauteuils = nombreFauteuils;
 	}
 
-	@Override
-	public String toString() {
-		return "Lieu [codeLieu=" + codeLieu + ", nomLieu=" + nomLieu + ", rue=" + rue + ", nombreFauteuils="
-				+ nombreFauteuils + "]";
-	}
-	
-	
+
 	
 }

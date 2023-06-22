@@ -30,15 +30,16 @@
   
   
     <tr th:each="l1 : ${ listeLieu }">
-      <th scope="row" th:text="${ l1.codeLieu }"></th>
+    
+    
+    	
+      <th scope="row"><a th:href="'getLieu/' + ${ l1.codeLieu }" th:text="${ l1.codeLieu }"></a></th>
       <td th:text="${ l1.nomLieu }"></td>
       <td th:text="${ l1.rue }" ></td>
       <td th:text="${ l1.nombreFauteuils }"></td>
-      
-      
       <td> <a th:href="'deleteLieu/' + ${ l1.codeLieu }"> <button type="button" class = "btn btn-danger">Supprimer</button> </a></td>
 	  <td> <a th:href="'modifLieu/' + ${ l1.codeLieu }"> <button type="button" class = "btn btn-danger">modifier</button> </a></td>
-
+    
 
     </tr>
 
